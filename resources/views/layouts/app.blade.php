@@ -14,7 +14,7 @@
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
         <link href="{{ asset('css/estilo.css') }}" rel="stylesheet">
         <link href="{{ asset('css/estilonav.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/estilocarrusel.css') }}" rel="stylesheet">
+   
 
         <link href="{{ asset('css/leaflet.css') }}" rel="stylesheet">
         <link href="{{ asset('css/Control.FullScreen.css') }}" rel="stylesheet">
@@ -46,18 +46,18 @@
                         <a class="navbar-brand" href="{{ url('/home') }}">
                             <img src="{{ asset('img/logo.png') }}" alt="...">
                         </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false"
-                        aria-label="{{ __('Toggle navigation') }}">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto ">
                             @can('coordenadas.index')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('coordenadas.index')}} ">VISOR</a>
+                                <a class="nav-link" href="{{route('coordenadas.index')}} ">MONITOREO</a>
                             </li>
                             @endcan
                             @can('proyectos.index')
@@ -70,6 +70,16 @@
                                 <a class="nav-link" href="{{route('trabajadors.index')}} ">PERSONAL</a>
                             </li>
                             @endcan
+                            @can('trabajadors.entradas')
+                            <li class="nav-item">
+                                <a class="nav-link" href=" ">PERMISOS Y FALTAS</a>
+                            </li>
+                            @endcan
+                            @can('trabajadors.entradas')
+                            <li class="nav-item">
+                                <a class="nav-link" href=" ">REPORTES</a>
+                            </li>
+                            @endcan
                             @can('users.index')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('users.index')}} ">USUARIOS</a>
@@ -80,18 +90,8 @@
                                 <a class="nav-link" href="{{route('roles.index')}} ">ROLES</a>
                             </li>
                             @endcan
-                            @can('trabajadors.entradas')
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('trabajadors.entradas')}} ">ENTRADAS</a>
-                            </li>
-                            @endcan
-                         
                            
-                            {{-- @can('documentos.index')
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('documentos.index')}} ">DOCUMENTOS</a>
-                            </li>
-                            @endcan --}}
+   
                         </ul>
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">

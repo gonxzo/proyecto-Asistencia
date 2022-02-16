@@ -1,11 +1,20 @@
-var icono_auto = L.icon({
-    iconUrl: "./img/naranja.png",
-    iconSize: [40, 40]
+var icono_casa = L.icon({
+    iconUrl: "./img/casaverde.png",
+    iconSize: [25, 40]
+});
+var icono_casaverde = L.icon({
+    iconUrl: "./img/casa.png",
+    iconSize: [25, 40]
+});
+var icono_persona = L.icon({
+    iconUrl: "./img/personaverde.png",
+    iconSize: [20, 30]
 });
 var icono_auto1 = L.icon({
-    iconUrl: "./img/azul.png",
-    iconSize: [40, 40]
+    iconUrl: "./img/personaroja.png",
+    iconSize: [20, 30]
 });
+
 
 
 var map = L.map('map', { center: new L.LatLng(-16.499957537926285, -68.12999725341797), zoom: 13, zoomAnimation: true });
@@ -43,23 +52,27 @@ function Position_Dinamic() {
             var ubicacion = parseInt(data[geoloc]['id']);
             var latitude = parseFloat(data[geoloc]['latitud']);
             var longitude = parseFloat(data[geoloc]['longitud']);
-            var text = "Nombre :";
+            var text = "Obrero :";
             var text1 = "Cargo :";
-            var text2 = "Proyecto a Cargo :";
-            var text3 = "Nombre del Proyecto :";
+            var text2 = "Proyecto :";
+            var text3 = "Proyecto :";
             var text4 = "Localidad :";
-
-            var datos = "<div style='font-size:13px;color:black; font-family: Helvetica'> " + text + data[geoloc]['nombre'] + " " + data[geoloc]['cargo'] + "<br />" + text1 + data[geoloc]['cargo'] + "<br />" + text2 + data[geoloc]['proyecto'] + "<br />";
-            var datos1 = "<div style='font-size:13px;color:black; font-family: Helvetica'> " + text3 + data[geoloc]['nombre'] + " " + data[geoloc]['cargo'] + "<br />" + text4 + data[geoloc]['cargo'] + "<br />";
+            var datos = "<div style='font-size:13px;color:black; font-family: Helvetica'> " + text + data[geoloc]['nombre'] + "<br />" + text2 + data[geoloc]['proyecto'] + "<br />";
+            var datos1 = "<div style='font-size:13px;color:black; font-family: Helvetica'> " + text3 + data[geoloc]['nombre'] + "<br />" + text4 + data[geoloc]['cargo'] + "<br />";
             /*  var datos = "hola"; */
 
 
             if (!Marker_Auto[ubicacion]) {
                 if (data[geoloc]['tipo'] == 'proyecto') {
-                    Marker_Auto[ubicacion] = L.marker([latitude, longitude], { icon: icono_auto }).addTo(map).bindPopup(datos1).addTo(map);
+                    if (data[geoloc]['idusuario'] == 1) {
+                        Marker_Auto[ubicacion] = L.marker([latitude, longitude], { icon: icono_casa }).addTo(map).bindPopup(datos1).addTo(map);
+                    } else {
+                        Marker_Auto[ubicacion] = L.marker([latitude, longitude], { icon: icono_casaverde }).addTo(map).bindPopup(datos1).addTo(map);
+                    }
+
 
                 } else {
-                    Marker_Auto[ubicacion] = L.marker([latitude, longitude], { icon: icono_auto1 }).addTo(map).bindPopup(datos).addTo(map);
+                    Marker_Auto[ubicacion] = L.marker([latitude, longitude], { icon: icono_persona }).addTo(map).bindPopup(datos).addTo(map);
                 }
             }
 

@@ -41,16 +41,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')->middleware('can:users.edit');
     Route::get('users.buscar', 'UserController@buscar')->name('users');
 
-    
-    //DOCUMENTOS
-    Route::post('documentos/store', 'DocumentoController@store')->name('documentos.store')->middleware('can:documentos.store');
-    Route::get('documentos', 'DocumentoController@index')->name('documentos.index')->middleware('can:documentos.index');
-    Route::get('documentos/create', 'DocumentoController@create')->name('documentos.create')->middleware('can:documentos.create');
-    Route::put('documentos/{documento}', 'DocumentoController@update')->name('documentos.update')->middleware('can:documentos.edit');
-    Route::get('documentos/{documento}', 'DocumentoController@show')->name('documentos.show')->middleware('can:documentos.show');
-    Route::delete('documentos/{documento}', 'DocumentoController@destroy')->name('documentos.destroy')->middleware('can:documentos.destroy');
-    Route::get('documentos_update/{documento}/edit', 'DocumentoController@edit')->name('documentos.edit')->middleware('can:documentos.edit');
-   
+
     //PROYECTOS
     Route::post('proyectos/store', 'ProyectoController@store')->name('proyectos.store')->middleware('can:proyectos.store');
     Route::get('proyectos', 'ProyectoController@index')->name('proyectos.index')->middleware('can:proyectos.index');
@@ -70,7 +61,7 @@ Route::middleware(['auth'])->group(function () {
      Route::delete('trabajadors/{trabajador}', 'TrabajadorController@destroy')->name('trabajadors.destroy')->middleware('can:trabajadors.destroy');
      Route::get('trabajadors/{trabajador}/edit', 'TrabajadorController@edit')->name('trabajadors.edit')->middleware('can:trabajadors.edit');
      Route::get('trabajadors-Entrada', 'TrabajadorController@entradas')->name('trabajadors.entradas')->middleware('can:trabajadors.entradas');
- 
+     Route::get('trabajadors/{trabajador}/reporte', 'TrabajadorController@generaPDF')->name('trabajadors.pdf')->middleware('can:trabajadors.pdf');
      //coordenadas
      Route::get('coordenadas', 'CoordenadasController@index')->name('coordenadas.index')->middleware('can:coordenadas.index');
     //CLEAR

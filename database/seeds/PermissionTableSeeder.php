@@ -86,6 +86,67 @@ class PermissionTableSeeder extends Seeder
             'slug'=>'documentos.destroy',
             'description'=>'ELIMINA UN DOCUMENTO EN ESPECIFICO',
         ]);
+         //trabajadores
+         Permission::create([
+            'name'=>'PERSONAL',
+            'slug'=>'trabajadors.index',
+            'description'=>'NAVEGA LA TABLA PERSONAL',
+        ]);
+        Permission::create([
+            'name'=>'PERSONAL',
+            'slug'=>'trabajadors.show',
+            'description'=>'VISUALIZA A UN REGISTRO DE PERSONAL EN ESPECIFICO',
+        ]);
+        Permission::create([
+            'name'=>'PERSONAL',
+            'slug'=>'trabajadors.create',
+            'description'=>'CREA UN NUEVO REGISTRO DE PERSONAL EN EL SISTEMA',
+        ]);
+        Permission::create([
+            'name'=>'PERSONAL',
+            'slug'=>'trabajadors.edit',
+            'description'=>'EDITA UN REGISTRO DE PERSONAL EN ESPECIFICO',
+        ]);
+        Permission::create([
+            'name'=>'PERSONAL',
+            'slug'=>'trabajadors.destroy',
+            'description'=>'ELIMINA UN REGISTRO DE PERSONAL EN ESPECIFICO',
+        ]);
+         //PROYECTOS
+         Permission::create([
+            'name'=>'PROYECTO',
+            'slug'=>'proyectos.index',
+            'description'=>'NAVEGA LA TABLA PROYECTOS',
+        ]);
+        Permission::create([
+            'name'=>'PROYECTO',
+            'slug'=>'proyectos.show',
+            'description'=>'VISUALIZA A UN REGISTRO DE PROYECTO EN ESPECIFICO',
+        ]);
+        Permission::create([
+            'name'=>'PROYECTO',
+            'slug'=>'proyectos.create',
+            'description'=>'CREA UN NUEVO REGISTRO DE PROYECTO EN EL SISTEMA',
+        ]);
+        Permission::create([
+            'name'=>'PROYECTO',
+            'slug'=>'proyectos.edit',
+            'description'=>'EDITA UN REGISTRO DE PROYECTO EN ESPECIFICO',
+        ]);
+        Permission::create([
+            'name'=>'PROYECTO',
+            'slug'=>'proyectos.destroy',
+            'description'=>'ELIMINA UN REGISTRO DE PROYECTO EN ESPECIFICO',
+        ]);
+
+        //COORDENADAS
+
+        Permission::create([
+            'name'=>'VISOR MAPA',
+            'slug'=>'coordenadas.index',
+            'description'=>'SE MUESTRA EL VISOR DEL MAPA',
+        ]);
+
         
     }
 }

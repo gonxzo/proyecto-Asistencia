@@ -3,18 +3,18 @@ header("access-control-allow-origin: *");
 $hostname = 'localhost'; // Máquina local 
 $database = 'asistencia_bd';
 $username = 'root';
-$password = '';
+$password = '11235813';
 // Conectarse a MySQL con extensión MySQLi 
 $mysqli = new mysqli($hostname, $username, $password, $database);
 
 $queryConexion = "";
 $queryView = array();
-$query = "select c.id,c.tipo,p.nombre,p.localidad as cargo, p.nombre as proyecto,c.geoloc
+$query = "select c.id,c.tipo,p.nombre,c.idusuario,p.localidad as cargo, p.nombre as proyecto,c.geoloc
 FROM coordenadas c, proyectos p
 where p.id = c.idcampo
 union
-select t1.id, t1.tipo, t1.nombre, t1.cargo, p1.nombre as proyecto,t1.geoloc
-from (select c.id,c.idcampo,c.geoloc,c.tipo,concat(t.nombre, ' ', t.apellidos) as nombre, t.cargo ,t.proyectoid
+select t1.id, t1.tipo, t1.nombre,t1.idusuario, t1.cargo, p1.nombre as proyecto,t1.geoloc
+from (select c.id,c.idcampo,c.idusuario,c.geoloc,c.tipo,concat(t.nombre, ' ', t.apellidos) as nombre, t.cargo ,t.proyectoid
 FROM coordenadas c, trabajadors t
 where t.id = c.idcampo) t1, proyectos p1
 where t1.proyectoid = p1.id";
@@ -26,6 +26,7 @@ while ($rows = $resultado->fetch_assoc()) {
     $ubicacionid = trim ($rows['id']);
     $ubicaciontipo = trim ($rows['tipo']);
     $ubicacionnombre = trim ($rows['nombre']);
+    $idusuario = trim ($rows['idusuario']);
     $ubicacioncargo = trim ($rows['cargo']);
     $ubicacionproyecto = trim ($rows['proyecto']);
     $ubicaciongeoloc  = trim($rows['geoloc']);
@@ -36,6 +37,7 @@ while ($rows = $resultado->fetch_assoc()) {
         'id' => $ubicacionid,
         'tipo' => $ubicaciontipo,
         'nombre' => $ubicacionnombre,
+        'idusuario' => $idusuario,
          'cargo' => $ubicacioncargo,
         'proyecto' => $ubicacionproyecto,
          

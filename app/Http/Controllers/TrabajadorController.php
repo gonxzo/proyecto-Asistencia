@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Trabajador;
 use App\Proyecto;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -109,5 +110,16 @@ class TrabajadorController extends Controller
     {
         $trabajador->delete();
         return back()->with('info','eliminado correctamente');
+    }
+    public function generaPDF(Trabajador $trabajador)
+    {
+        
+        $trabajador=Trabajador::all();
+        
+        
+        /* return response()->json($ids); */
+       $pdf = PDF::loadView('trabajadors.pdf', compact('trabajador'))->setPaper('A4', 'portrait'); 
+
+       return $pdf->stream('trabajadors.pdf');
     }
 }

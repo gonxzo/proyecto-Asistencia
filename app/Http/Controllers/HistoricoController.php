@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Asistencia;
+use App\Historico;
 use Illuminate\Http\Request;
 
-class AsistenciaController extends Controller
+class HistoricoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class AsistenciaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Asistencia  $asistencia
+     * @param  \App\Historico  $historico
      * @return \Illuminate\Http\Response
      */
-    public function show(Asistencia $asistencia)
+    public function show(Historico $historico)
     {
         //
     }
@@ -52,10 +52,10 @@ class AsistenciaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Asistencia  $asistencia
+     * @param  \App\Historico  $historico
      * @return \Illuminate\Http\Response
      */
-    public function edit(Asistencia $asistencia)
+    public function edit(Historico $historico)
     {
         //
     }
@@ -64,10 +64,10 @@ class AsistenciaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Asistencia  $asistencia
+     * @param  \App\Historico  $historico
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Asistencia $asistencia)
+    public function update(Request $request, Historico $historico)
     {
         //
     }
@@ -75,10 +75,10 @@ class AsistenciaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Asistencia  $asistencia
+     * @param  \App\Historico  $historico
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Asistencia $asistencia)
+    public function destroy(Historico $historico)
     {
         //
     }

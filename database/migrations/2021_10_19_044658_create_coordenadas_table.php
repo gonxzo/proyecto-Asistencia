@@ -18,6 +18,8 @@ class CreateCoordenadasTable extends Migration
             $table->string('idcampo');
             $table->string('geoloc');
             $table->string('tipo');
+            $table->integer('idusuario');
+            $table->string('hora');
             $table->timestamps();
         });
     }

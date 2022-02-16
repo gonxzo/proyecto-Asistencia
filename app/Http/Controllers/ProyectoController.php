@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Proyecto;
-use App\Documento;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -18,10 +17,9 @@ class ProyectoController extends Controller
     public function index()
     {
         $proyectos=Proyecto::all();
-        $documento=Documento::all();
         $proyectos=Proyecto::paginate(100);
        
-        return view('proyectos.index', compact('proyectos','documento'));
+        return view('proyectos.index', compact('proyectos'));
     }
 
     /**
