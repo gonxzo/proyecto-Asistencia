@@ -51,6 +51,15 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('proyectos/{proyecto}', 'ProyectoController@destroy')->name('proyectos.destroy')->middleware('can:proyectos.destroy');
     Route::get('proyectos/{proyecto}/edit', 'ProyectoController@edit')->name('proyectos.edit')->middleware('can:proyectos.edit');
     Route::get('proyectos/{proyecto}', 'ProyectoController@edit')->name('proyectos.imagenes')->middleware('can:proyectos.imagenes');
+
+        //PERMISO FALTA
+        Route::post('permisofaltas/store', 'PermisofaltaController@store')->name('permisofaltas.store')->middleware('can:permisofaltas.store');
+        Route::get('permisofaltas', 'PermisofaltaController@index')->name('permisofaltas.index')->middleware('can:permisofaltas.index');
+        Route::get('permisofaltas/create', 'PermisofaltaController@create')->name('permisofaltas.create')->middleware('can:permisofaltas.create');
+        Route::put('permisofaltas/{permisofalta}', 'PermisofaltaController@update')->name('permisofaltas.update')->middleware('can:permisofaltas.edit');
+        Route::get('permisofaltas/{permisofalta}', 'PermisofaltaController@show')->name('permisofaltas.show')->middleware('can:permisofaltas.show');
+        Route::delete('permisofaltas/{permisofalta}', 'PermisofaltaController@destroy')->name('permisofaltas.destroy')->middleware('can:permisofaltas.destroy');
+        Route::get('permisofaltas/{permisofalta}/edit', 'PermisofaltaController@edit')->name('permisofaltas.edit')->middleware('can:permisofaltas.edit');
     
      //TRABAJADORES
      Route::post('trabajadors/store', 'TrabajadorController@store')->name('trabajadors.store')->middleware('can:trabajadors.store');

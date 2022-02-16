@@ -20,7 +20,7 @@ class CreatePermisofaltasTable extends Migration
             $table->string('observacion');
             $table->timestamps();
         });
-    }
+    } 
 
     /**
      * Reverse the migrations.

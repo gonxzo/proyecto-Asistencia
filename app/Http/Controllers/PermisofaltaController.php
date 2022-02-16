@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Permisofalta;
+use App\Trabajador;
 use Illuminate\Http\Request;
 
 class PermisofaltaController extends Controller
@@ -14,7 +15,10 @@ class PermisofaltaController extends Controller
      */
     public function index()
     {
-        //
+        $permisofaltas=Permisofalta::all();
+        $trabajadors=Trabajador::all();
+        $permisofaltas=Permisofalta::paginate(100);
+        return view('permisofaltas.index', compact('permisofaltas','trabajadors'));
     }
 
     /**
@@ -24,7 +28,9 @@ class PermisofaltaController extends Controller
      */
     public function create()
     {
-        //
+        
+        $trabajador=Trabajador::all();
+        return view('permisofaltas.create',compact('trabajador'));
     }
 
     /**
@@ -35,7 +41,10 @@ class PermisofaltaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $permisofalta=Permisofalta::create($request->all());
+        return redirect()->route('permisofaltas.index',$permisofalta->id)
+        ->with('info','trabajador  Guardado con exito!!.');
+    
     }
 
     /**
@@ -57,7 +66,8 @@ class PermisofaltaController extends Controller
      */
     public function edit(Permisofalta $permisofalta)
     {
-        //
+        $trabajador=Trabajador::all();
+        return view('permisofaltas.edit', compact('permisofalta','trabajador'));
     }
 
     /**
@@ -69,7 +79,9 @@ class PermisofaltaController extends Controller
      */
     public function update(Request $request, Permisofalta $permisofalta)
     {
-        //
+        $permisofalta->update($request->all());
+        return redirect()->route('permisofaltas.index', $permisofalta->id)
+        ->with('info','Registro trabajador Actualizado con exito!!.');
     }
 
     /**
@@ -80,6 +92,7 @@ class PermisofaltaController extends Controller
      */
     public function destroy(Permisofalta $permisofalta)
     {
-        //
+        $permisofalta->delete();
+        return back()->with('info','eliminado correctamente');
     }
 }

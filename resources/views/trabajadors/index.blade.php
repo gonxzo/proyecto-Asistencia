@@ -24,7 +24,7 @@
                                 <th scope="col">Direccion</th>
                                 <th scope="col">cargo</th>
                                 <th scope="col">Proyecto</th>
-                                <th scope="col">Reporte</th>
+                                {{-- <th scope="col">Reporte</th> --}}
                                 <th scope="col">Mostrar</th>
                                 <th scope="col">Editar</th>
                                 <th scope="col">Eliminar</th>
@@ -37,8 +37,13 @@
                                 <td >{{$item->nombre }} {{$item->apellidos }} </td>
                                 <td >{{$item->direccion }} </td>
                                 <td >{{$item->cargo }} </td>
-                                <td >{{$item->proyectoid }} </td>
-                                <td width=10px>
+                                @foreach ($proyectos as $proy )
+                                    @if ($proy->id == $item->proyectoid)
+                                        <td>{{$proy->nombre }} </td>
+                                    @endif
+                                @endforeach
+                             
+                             {{--    <td width=10px>
                                     <button type="button" class="btn btn-sm btn-success" data-toggle="modal"
                                         data-target="#modal{{ $item->id }}">
                                         Reporte
@@ -51,13 +56,13 @@
                                                 <div class="modal-body">
                                                     <embed src="{{ route('trabajadors.pdf', $item->id) }}"
                                                         type="application/pdf" width="100%" height="750px" />
-                                                    {{-- <div class="modal-footer">
+                                                    <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                        </div> --}}
+                                        </div>
                                                 </div>
                                             </div>
                                         </div>
-                                </td>
+                                </td> --}}
                                 <td width = 10px>
                                     @can('trabajadors.show')
                                     <button  type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal{{$item->id}}">

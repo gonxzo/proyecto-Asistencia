@@ -70,9 +70,9 @@
                                 <a class="nav-link" href="{{route('trabajadors.index')}} ">PERSONAL</a>
                             </li>
                             @endcan
-                            @can('trabajadors.entradas')
+                            @can('permisofaltas.index')
                             <li class="nav-item">
-                                <a class="nav-link" href=" ">PERMISOS Y FALTAS</a>
+                                <a class="nav-link" href="{{route('permisofaltas.index')}} ">PERMISOS Y FALTAS</a>
                             </li>
                             @endcan
                             @can('trabajadors.entradas')
