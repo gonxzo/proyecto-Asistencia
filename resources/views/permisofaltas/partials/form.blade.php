@@ -3,8 +3,12 @@
     <strong> {!! Form::label('idusuario','Nombre de Trabajador') !!}</strong>
     <select class="form-control" name="idusuario" id="idusuario">
       @foreach($trabajador as $trab)
-          <option value="{{$trab['id']}}">{{$trab['nombre']}} {{$trab['apellidos']}} 
+        @foreach ($user as $usuario )
+          @if ($trab->idusuario == $usuario->id)
+          <option value="{{$usuario['id']}}">{{$usuario['name']}} 
           </option>
+          @endif
+        @endforeach
       @endforeach
     </select>
   </div>

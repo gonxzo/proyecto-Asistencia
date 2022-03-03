@@ -8,6 +8,6 @@ class Proyecto extends Model
 {
     protected $primaryKey = 'id';
     protected $fillable = [
-        'nombre','localidad','latlon',
+        'id','nombre','localidad','tipo','superficieutil','descripcion','fechai','fechaf','fechae','latlon','created_at','updated_at',
     ];
 }

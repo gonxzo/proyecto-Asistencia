@@ -27,7 +27,7 @@
         <script src="{{ asset('js/select2.min.js') }}" defer></script>
         <script src="{{ asset('js/composicion/funciones.js') }}" defer></script>
         <script src="{{ asset('js/composicion/funcionMapa.js') }}" defer></script>
-        <script src="{{ asset('js/composicion/funcioncarrusel.js') }}" defer></script>
+     
 
         <script src="{{ asset('js/leaflet.js') }}" defer></script>
         <script src="{{ asset('js/Control.FullScreen.js') }}" defer></script>

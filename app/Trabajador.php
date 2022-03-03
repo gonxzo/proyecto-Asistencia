@@ -8,6 +8,6 @@ class Trabajador extends Model
 {
     protected $primaryKey = 'id';
     protected $fillable = [
-        'id','nombre','apellidos','edad','direccion','cargo','proyectoid','locallatlon',
+        'id','idusuario','cargo','proyectoid','created_at','updated_at',
     ];
 }

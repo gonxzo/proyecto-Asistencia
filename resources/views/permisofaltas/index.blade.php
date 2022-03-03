@@ -11,7 +11,8 @@
                     </div>
                     <div class="card-body">
                         @can('permisofaltas.create')
-                            <a href="{{ route('permisofaltas.create') }}" class="btn btn-sm btn-primary mb-1">Nuevo Registro</a>
+                            <a href="{{ route('permisofaltas.create') }}" class="btn btn-sm btn-primary mb-1">Nuevo
+                                Registro</a>
                         @endcan
                         <br>
                         <div class="table-responsive">
@@ -29,11 +30,11 @@
                                 <tbody>
                                     @foreach ($permisofaltas as $item)
                                         <tr>
-                                            @foreach ($trabajadors as $personal )
-                                                @if ($personal->id == $item->idusuario)
-                                                <td>{{ $personal->nombre }} {{ $personal->apellidos }} </td>
-                                                @endif    
-                                            @endforeach   
+                                            @foreach ($users as $user)
+                                                @if ($item->idusuario == $user->id)
+                                                    <td>{{ $user->name }} </td>
+                                                @endif
+                                            @endforeach
                                             <td>{{ $item->tipo }} </td>
                                             <td>{{ $item->observacion }} </td>
                                             <td width=10px>
@@ -52,17 +53,25 @@
                                                                         DESCRIPCION DEL PROYECTO</h5>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    @foreach ($trabajadors as $personal )
+                                                                    @foreach ($trabajadors as $personal)
                                                                         @if ($personal->id == $item->idusuario)
-                                                                        <p><strong>Nombre del Trabajador:</strong>{{ $personal->nombre }} {{ $personal->apellidos }}</p>
-                                                                        <p><strong>Edad del Trabajador:</strong>{{ $personal->edad }} </p>
-                                                                        <p><strong>Cargo:</strong>{{ $personal->cargo }} </p>
-                                                                        <p><strong>Direccion:</strong>{{ $personal->direccion }}</p>
-                                                                        @endif    
-                                                                    @endforeach  
-                                                                    <p><strong>Tipo de Ausencia: </strong> {{ $item->tipo }}</p>
-                                                                    <p><strong>Observacion: </strong> {{ $item->observacion }}</p>
-                                                                    
+                                                                            <p><strong>Nombre del
+                                                                                    Trabajador:</strong>{{ $personal->nombre }}
+                                                                                {{ $personal->apellidos }}</p>
+                                                                            <p><strong>Edad del
+                                                                                    Trabajador:</strong>{{ $personal->edad }}
+                                                                            </p>
+                                                                            <p><strong>Cargo:</strong>{{ $personal->cargo }}
+                                                                            </p>
+                                                                            <p><strong>Direccion:</strong>{{ $personal->direccion }}
+                                                                            </p>
+                                                                        @endif
+                                                                    @endforeach
+                                                                    <p><strong>Tipo de Ausencia: </strong> {{ $item->tipo }}
+                                                                    </p>
+                                                                    <p><strong>Observacion: </strong>
+                                                                        {{ $item->observacion }}</p>
+
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary"
                                                                             data-dismiss="modal">Cerrar</button>

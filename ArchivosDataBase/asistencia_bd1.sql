@@ -11,7 +11,7 @@
  Target Server Version : 100414
  File Encoding         : 65001
 
- Date: 03/03/2022 07:54:21
+ Date: 16/02/2022 16:03:46
 */
 
 SET NAMES utf8mb4;
@@ -26,24 +26,34 @@ CREATE TABLE `coordenadas`  (
   `idcampo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `geoloc` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `tipo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idusuario` int NOT NULL,
+  `hora` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of coordenadas
 -- ----------------------------
-INSERT INTO `coordenadas` VALUES (26, '13', '-16.5347328, -68.2262528', 'proyecto', '2022-02-02 03:58:48', '2022-03-02 03:58:48');
-INSERT INTO `coordenadas` VALUES (27, '37', '-16.5322094, -68.2074774', 'trabajador', '2022-02-03 03:59:34', '2022-03-02 03:59:34');
-INSERT INTO `coordenadas` VALUES (28, '14', '-16.5347328, -68.2262528', 'proyecto', '2022-02-04 04:47:45', '2022-03-02 04:47:45');
-INSERT INTO `coordenadas` VALUES (29, '15', '-16.5347328, -68.2262528', 'proyecto', '2022-02-05 04:48:28', '2022-03-02 04:48:28');
-INSERT INTO `coordenadas` VALUES (30, '38', '-16.5322094, -68.2074774', 'trabajador', '2022-02-06 06:53:18', '2022-03-02 06:53:18');
-INSERT INTO `coordenadas` VALUES (31, '37', '-16.5322094, -68.2074774', 'trabajador', '2022-02-07 03:59:34', '2022-03-02 03:59:34');
-INSERT INTO `coordenadas` VALUES (32, '37', '-16.5322094, -68.2074774', 'trabajador', '2022-02-08 03:59:34', '2022-03-02 03:59:34');
-INSERT INTO `coordenadas` VALUES (33, '37', '-16.5322094, -68.2074774', 'trabajador', '2022-02-09 03:59:34', '2022-03-02 03:59:34');
-INSERT INTO `coordenadas` VALUES (35, '37', '-16.5322094, -68.2074774', 'trabajador', '2022-02-10 03:59:34', '2022-03-02 03:59:34');
-INSERT INTO `coordenadas` VALUES (36, '37', '-16.5322094, -68.2074774', 'trabajador', '2022-02-11 03:59:34', '2022-03-02 03:59:34');
+INSERT INTO `coordenadas` VALUES (3, '7', '-16.50827833,-68.11762333', 'proyecto', 1, '', '2021-10-19 04:38:36', '2021-10-19 04:38:36');
+INSERT INTO `coordenadas` VALUES (4, '3', '-16.506595,-68.126485 ', 'trabajador', 1, '', '2021-10-19 04:40:04', '2021-10-19 04:40:04');
+INSERT INTO `coordenadas` VALUES (5, '8', '-16.51518,-68.13019667   ', 'proyecto', 1, '', '2021-10-19 04:46:51', '2021-10-19 04:46:51');
+INSERT INTO `coordenadas` VALUES (6, '4', '-16.509876833,-68.192667', 'trabajador', 1, '', '2021-10-19 04:48:29', '2021-10-19 04:48:29');
+INSERT INTO `coordenadas` VALUES (8, '9', '-16.54693667,-68.117225633  ', 'proyecto', 2, '', '2021-10-19 11:56:09', '2021-10-19 11:56:09');
+INSERT INTO `coordenadas` VALUES (9, '10', '-16.50335233,-68.12762167 ', 'proyecto', 2, '', '2021-10-19 11:56:49', '2021-10-19 11:56:49');
+INSERT INTO `coordenadas` VALUES (10, '22', '-16.498333,-68.3539365 ', 'trabajador', 1, '', '2021-10-19 11:57:29', '2021-10-19 11:57:29');
+INSERT INTO `coordenadas` VALUES (11, '11', '-16.5117952, -68.0689664', 'proyecto', 1, '', '2021-10-19 12:56:27', '2021-10-19 12:56:27');
+INSERT INTO `coordenadas` VALUES (12, '23', '-16.50346167,-68.16167667 ', 'trabajador', 1, '', '2021-10-19 12:59:24', '2021-10-19 12:59:24');
+INSERT INTO `coordenadas` VALUES (13, '24', '-16.5322096, -68.2074776', 'trabajador', 1, '', '2022-01-20 06:16:29', '2022-01-20 06:16:29');
+INSERT INTO `coordenadas` VALUES (14, '25', '-16.5322096, -68.2074776', 'trabajador', 1, '', '2022-01-20 06:16:51', '2022-01-20 06:16:51');
+INSERT INTO `coordenadas` VALUES (15, '26', '-16.498853, -68.124265                            ', 'trabajador', 1, '', '2022-01-20 06:17:20', '2022-01-20 06:17:20');
+INSERT INTO `coordenadas` VALUES (16, '27', '-16.495813, -68.132596                            ', 'trabajador', 1, '', '2022-01-20 06:17:55', '2022-01-20 06:17:55');
+INSERT INTO `coordenadas` VALUES (17, '28', '', 'trabajador', 1, '', '2022-01-20 06:18:28', '2022-01-20 06:18:28');
+INSERT INTO `coordenadas` VALUES (18, '29', '-16.5322096, -68.2074776', 'trabajador', 1, '', '2022-01-20 06:18:58', '2022-01-20 06:18:58');
+INSERT INTO `coordenadas` VALUES (19, '30', '-16.5322096, -68.2074776', 'trabajador', 1, '', '2022-01-20 06:19:39', '2022-01-20 06:19:39');
+INSERT INTO `coordenadas` VALUES (20, '30', '-16.5322096, -68.2074776', 'trabajador', 1, '', '2022-01-20 11:21:00', '2022-01-20 10:21:06');
+INSERT INTO `coordenadas` VALUES (21, '30', '-16.5322096, -68.2074776', 'trabajador', 1, '', '2022-01-19 11:23:33', '2022-01-19 11:23:35');
 
 -- ----------------------------
 -- Table structure for entradas
@@ -156,12 +166,11 @@ CREATE TABLE `permisofaltas`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of permisofaltas
 -- ----------------------------
-INSERT INTO `permisofaltas` VALUES (3, 46, 'PERMISO', 'ESTA HOSPITALIZADO EN LA CLINICA SAGRADO CORAZON DE JESUS POR UN ACCIDENDE TE TRANSITO', '2022-03-02 04:28:54', '2022-03-02 04:28:54');
 
 -- ----------------------------
 -- Table structure for permission_role
@@ -272,25 +281,21 @@ DROP TABLE IF EXISTS `proyectos`;
 CREATE TABLE `proyectos`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tipo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `localidad` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `superficieutil` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fechai` date NOT NULL,
-  `fechaf` date NOT NULL,
-  `fechae` date NOT NULL,
   `latlon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of proyectos
 -- ----------------------------
-INSERT INTO `proyectos` VALUES (13, 'VIVIENDA SOCIAL TIAHUANACU', 'CONSTRUCCIÓN NUEVA', 'TIAHUANACO', 'BAÑO, COCINA, COMEDOR, 3 DORMITORIOS, SALA COMEDOR', 'TODO EN CONJUNTO', '2022-03-09', '2022-03-24', '2022-04-06', '-16.5347328, -68.2262528', '2022-01-02 03:58:48', '2022-01-02 03:58:48');
-INSERT INTO `proyectos` VALUES (14, 'VIVIENDA SOCIAL LAJA', 'CONSTRUCCIÓN NUEVA', 'CAMINO A LAJA', 'BAÑO, COCINA, COMEDOR, 3 DORMITORIOS, SALA COMEDOR', 'TODA LA CONSTRUCCION', '2022-04-15', '2022-03-31', '2022-04-09', '-16.5347328, -68.2262528', '2022-02-02 04:47:45', '2022-02-02 04:47:45');
-INSERT INTO `proyectos` VALUES (15, 'VIVIENDA SOCIAL MERCEDARIO', 'CONSTRUCCIÓN NUEVA', 'ZONA MERCEDARIO', 'BAÑO, COCINA, COMEDOR, 3 DORMITORIOS, SALA COMEDOR', 'TODA LA CONSTRUCCION', '2022-03-14', '2022-04-30', '2022-06-01', '-16.5347328, -68.2262528', '2022-03-02 04:48:28', '2022-03-02 04:48:28');
+INSERT INTO `proyectos` VALUES (7, 'GENERACION DE PLANTA ELECTRICA', 'SENKATA Z VILLA ARMONIA', '-16.48748167,-68.15106167', '2021-10-19 04:38:36', '2021-10-19 04:38:36');
+INSERT INTO `proyectos` VALUES (8, 'CONSTRUCCION DE CARRETERA SAN JUAN PAPTITO', 'URB. LA COMARCA', '-16.79911333,-68.17768833 ', '2021-10-19 04:46:51', '2021-10-19 04:46:51');
+INSERT INTO `proyectos` VALUES (9, 'CONSTRUCION DE PLAZA', 'EL ALTO ORO NEGRO CUPILLUPACA', '-16.54067,-68.079325  ', '2021-10-19 11:56:09', '2021-10-19 11:56:09');
+INSERT INTO `proyectos` VALUES (10, 'CONSTRUCCION DE COLEGIO', 'EL ALTO Z. NUEVOS HORIZONTES', '-16.50670833,-68.12584833 ', '2021-10-19 11:56:49', '2021-10-19 11:56:49');
+INSERT INTO `proyectos` VALUES (11, 'CONTRUCION DE PLANTA DE AZUCAR', 'LA PAZ Z. GRAN PODER', '-16.5117952, -68.0689664', '2021-10-19 12:56:27', '2021-10-19 12:56:27');
 
 -- ----------------------------
 -- Table structure for role_user
@@ -307,14 +312,14 @@ CREATE TABLE `role_user`  (
   INDEX `role_user_user_id_index`(`user_id`) USING BTREE,
   CONSTRAINT `role_user_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `role_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of role_user
 -- ----------------------------
 INSERT INTO `role_user` VALUES (2, 1, 22, NULL, NULL);
 INSERT INTO `role_user` VALUES (3, 1, 45, '2022-01-20 07:45:54', '2022-01-20 07:45:54');
-INSERT INTO `role_user` VALUES (5, 1, 46, '2022-02-16 15:53:14', '2022-02-16 15:53:14');
+INSERT INTO `role_user` VALUES (4, 5, 46, '2022-01-20 16:29:56', '2022-01-20 16:29:56');
 
 -- ----------------------------
 -- Table structure for roles
@@ -345,19 +350,32 @@ INSERT INTO `roles` VALUES (5, 'GERENTE', 'GG', 'SOLO PARA EL GERENTE', '2022-01
 DROP TABLE IF EXISTS `trabajadors`;
 CREATE TABLE `trabajadors`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `idusuario` bigint NOT NULL,
+  `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `apellidos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `edad` int NOT NULL,
+  `direccion` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `cargo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `proyectoid` bigint NOT NULL,
+  `proyectoid` int NOT NULL,
+  `locallatlon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 31 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of trabajadors
 -- ----------------------------
-INSERT INTO `trabajadors` VALUES (37, 46, 'JEFE DE PERSONAL', 13, '2022-03-02 03:59:34', '2022-03-02 03:59:34');
-INSERT INTO `trabajadors` VALUES (38, 45, 'OBRERO', 14, '2022-03-02 06:53:18', '2022-03-02 06:53:18');
+INSERT INTO `trabajadors` VALUES (3, 'JULIO ESTEBAN', 'MENDOZA QUISPE', 35, 'LA PAZ AV. DEL POETA', 'OBRERO', 7, '-16.5117952, -68.1377792', '2021-10-19 04:40:04', '2022-01-13 04:24:30');
+INSERT INTO `trabajadors` VALUES (4, 'MARCELO', 'CHOQUE', 35, 'LA PAZ AV. DEL POETA', 'OBRERO', 8, '-16.515175,-68.130885   ', '2021-10-19 04:48:29', '2021-10-19 04:49:22');
+INSERT INTO `trabajadors` VALUES (22, 'GONZALO', 'CARANI CONDORI', 30, 'EL ALTO Z. VILLA MERCEDEZ', 'OBRERO', 9, '-17.06408667,-69.189235', '2021-10-19 11:57:29', '2021-10-19 11:57:29');
+INSERT INTO `trabajadors` VALUES (23, 'JORGE', 'MAMANI CHOQUE', 45, 'EL ALTO Z HORIZONTES CALLE 5', 'OBRERO', 11, '-16.5117952, -68.0689664', '2021-10-19 12:59:24', '2021-10-19 12:59:24');
+INSERT INTO `trabajadors` VALUES (24, 'MARCELO', 'MAMANI MAMANI', 25, 'EL ALTO Z CUPILUPACA', 'OBRERO', 8, '-16.5322096, -68.2074776', '2022-01-20 06:16:29', '2022-01-20 06:16:29');
+INSERT INTO `trabajadors` VALUES (25, 'FEDERICO', 'MENDOZA MAMANI', 30, 'EL ALTO Z. VILLA MERCEDEZ', 'OBRERO', 7, '-16.5322096, -68.2074776', '2022-01-20 06:16:50', '2022-01-20 06:16:50');
+INSERT INTO `trabajadors` VALUES (26, 'MARCELO', 'CONTRERAS MENDOZA', 20, 'LA PAZ AV. DEL POETA', 'OBRERO', 11, '-16.5322096, -68.2074776', '2022-01-20 06:17:20', '2022-01-20 06:17:20');
+INSERT INTO `trabajadors` VALUES (27, 'CARLOS', 'QUISPE QUISPE', 50, 'EL ALTO Z. MERCEDARIO', 'OBRERO', 9, '-16.5322096, -68.2074776', '2022-01-20 06:17:55', '2022-01-20 06:17:55');
+INSERT INTO `trabajadors` VALUES (28, 'RUDDY', 'CONDORI', 30, 'EL ALTO HORIZONTES', 'OBRERO', 9, '-16.5322096, -68.2074776', '2022-01-20 06:18:28', '2022-01-20 06:18:28');
+INSERT INTO `trabajadors` VALUES (29, 'ELOY', 'MONTES MAMANI', 30, 'EL ALTO VILLA PORVENIR', 'OBRERO', 10, '-16.5322096, -68.2074776', '2022-01-20 06:18:58', '2022-01-20 06:18:58');
+INSERT INTO `trabajadors` VALUES (30, 'FERNANDO', 'QUISPE QUISPE', 25, 'EL ALTO SEGUENCOMA', 'OBRERO', 7, '-16.5322096, -68.2074776', '2022-01-20 06:19:39', '2022-01-20 06:19:39');
 
 -- ----------------------------
 -- Table structure for users

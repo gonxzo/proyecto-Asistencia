@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Trabajador;
 use App\Proyecto;
+use App\User;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,8 +20,9 @@ class TrabajadorController extends Controller
     {
         $trabajadors=Trabajador::all();
         $proyectos=Proyecto::all();
+        $users=User::all();
         $trabajadors=Trabajador::paginate(500);
-        return view('trabajadors.index', compact('trabajadors','proyectos')); 
+        return view('trabajadors.index', compact('trabajadors','proyectos','users')); 
     }
 
     /**
@@ -31,7 +33,8 @@ class TrabajadorController extends Controller
     public function create()
     {
         $proyecto=Proyecto::all();
-        return view('trabajadors.create',compact('proyecto'));
+        $user=User::all();
+        return view('trabajadors.create',compact('proyecto','user'));
        
     }
 
@@ -47,7 +50,7 @@ class TrabajadorController extends Controller
         $trabajador=Trabajador::create($request->all());
         DB::table('coordenadas')->insert([
             'idcampo' => $trabajador->id,
-            'geoloc' =>  $request->locallatlon,
+            'geoloc' =>  '-16.5322094, -68.2074774',
             'tipo' => 'trabajador',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
@@ -66,13 +69,7 @@ class TrabajadorController extends Controller
     {
         //
     }
-    public function entradas()
-    {
-        $trabajadors=Trabajador::all();
-        $proyectos=Proyecto::all();
-        return view('trabajadors.entradas', compact('trabajadors','proyectos'));
-    }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -82,7 +79,8 @@ class TrabajadorController extends Controller
     public function edit(Trabajador $trabajador)
     {
         $proyecto=Proyecto::all();
-        return view('trabajadors.edit',compact('trabajador','proyecto'));
+        $user=User::all();
+        return view('trabajadors.edit',compact('trabajador','proyecto','user'));
     }
 
     /**

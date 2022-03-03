@@ -8,7 +8,7 @@
     <div class="col-md-10">
         <div class="card">
             <div class="card-header">
-                Personal
+                TRABAJADORES
             </div>
             <div class="card-body">
                 @can('trabajadors.create')
@@ -24,45 +24,33 @@
                                 <th scope="col">Direccion</th>
                                 <th scope="col">cargo</th>
                                 <th scope="col">Proyecto</th>
-                                {{-- <th scope="col">Reporte</th> --}}
+                                @can('trabajadors.show')
                                 <th scope="col">Mostrar</th>
+                                @endcan
+                                @can('trabajadors.edit')
                                 <th scope="col">Editar</th>
+                                @endcan
+                                @can('trabajadors.destroy')
                                 <th scope="col">Eliminar</th>
+                                @endcan
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($trabajadors as $item)
                             <tr>
-                                
-                                <td >{{$item->nombre }} {{$item->apellidos }} </td>
-                                <td >{{$item->direccion }} </td>
+                                @foreach ($users as $user )
+                                    @if ($item->idusuario == $user->id)
+                                        <td >{{$user->name }} </td>
+                                        <td >{{$user->direccion }} </td>
+                                    @endif
+                                @endforeach
                                 <td >{{$item->cargo }} </td>
                                 @foreach ($proyectos as $proy )
                                     @if ($proy->id == $item->proyectoid)
                                         <td>{{$proy->nombre }} </td>
                                     @endif
                                 @endforeach
-                             
-                             {{--    <td width=10px>
-                                    <button type="button" class="btn btn-sm btn-success" data-toggle="modal"
-                                        data-target="#modal{{ $item->id }}">
-                                        Reporte
-                                    </button>
-                                    <div class="modal fade" id="modal{{ $item->id }}" tabindex="-1"
-                                        role="dialog" aria-labelledby="exampleModalCenterTitle"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                    <embed src="{{ route('trabajadors.pdf', $item->id) }}"
-                                                        type="application/pdf" width="100%" height="750px" />
-                                                    <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </td> --}}
+                           
                                 <td width = 10px>
                                     @can('trabajadors.show')
                                     <button  type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal{{$item->id}}">

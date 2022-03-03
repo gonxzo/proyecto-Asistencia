@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Permisofalta;
 use App\Trabajador;
+use App\User;
 use Illuminate\Http\Request;
 
 class PermisofaltaController extends Controller
@@ -17,8 +18,9 @@ class PermisofaltaController extends Controller
     {
         $permisofaltas=Permisofalta::all();
         $trabajadors=Trabajador::all();
+        $users=User::all();
         $permisofaltas=Permisofalta::paginate(100);
-        return view('permisofaltas.index', compact('permisofaltas','trabajadors'));
+        return view('permisofaltas.index', compact('permisofaltas','trabajadors','users'));
     }
 
     /**
@@ -30,7 +32,8 @@ class PermisofaltaController extends Controller
     {
         
         $trabajador=Trabajador::all();
-        return view('permisofaltas.create',compact('trabajador'));
+        $user=User::all();
+        return view('permisofaltas.create',compact('trabajador','user'));
     }
 
     /**
@@ -67,7 +70,8 @@ class PermisofaltaController extends Controller
     public function edit(Permisofalta $permisofalta)
     {
         $trabajador=Trabajador::all();
-        return view('permisofaltas.edit', compact('permisofalta','trabajador'));
+        $user=User::all();
+        return view('permisofaltas.edit', compact('permisofalta','trabajador','user'));
     }
 
     /**

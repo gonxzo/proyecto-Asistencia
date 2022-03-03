@@ -15,13 +15,9 @@ class CreateTrabajadorsTable extends Migration
     {
         Schema::create('trabajadors', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('apellidos');
-            $table->integer('edad');
-            $table->string('direccion');
+            $table->bigInteger('idusuario');
             $table->string('cargo');
-            $table->integer('proyectoid');
-            $table->string('locallatlon');
+            $table->bigInteger('proyectoid');
             $table->timestamps();
         });
     }

@@ -14,12 +14,20 @@ class ProyectoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $proyectos=Proyecto::all();
-        $proyectos=Proyecto::paginate(100);
-       
-        return view('proyectos.index', compact('proyectos'));
+      /*   $fechaini = $request->get('fechaini');
+        $fechafin = $request->get('fechafin'); */
+      /*  dd($request->get('fechaini'));
+       dd($request->get('fechafin')); */
+        $fechaini = '2022-02-02';
+        $fechafin = '2022-03-31';
+         $datos['proyectos'] = DB::table('proyectos')
+     /*    ->where('created_at', '>=','%'.$fechaini.'%')
+        ->where('created_at', '<=','%'.$fechafin.'%') */
+        ->select('proyectos.*')
+        ->paginate(100);
+        return view('proyectos.index',$datos);
     }
 
     /**
