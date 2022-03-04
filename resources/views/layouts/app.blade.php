@@ -77,7 +77,7 @@
                             @endcan
                             @can('trabajadors.entradas')
                             <li class="nav-item">
-                                <a class="nav-link" href=" ">REPORTES</a>
+                                <a class="nav-link" href=" {{route('trabajadors.reportes')}}">REPORTES</a>
                             </li>
                             @endcan
                             @can('users.index')

@@ -71,6 +71,10 @@ Route::middleware(['auth'])->group(function () {
      Route::get('trabajadors/{trabajador}/edit', 'TrabajadorController@edit')->name('trabajadors.edit')->middleware('can:trabajadors.edit');
      Route::get('trabajadors-Entrada', 'TrabajadorController@entradas')->name('trabajadors.entradas')->middleware('can:trabajadors.entradas');
      Route::get('trabajadors/{trabajador}/reporte', 'TrabajadorController@generaPDF')->name('trabajadors.pdf')->middleware('can:trabajadors.pdf');
+     Route::get('reporte','TrabajadorController@reporte')->name('trabajadors.reportes');
+     Route::get('reportefechas','TrabajadorController@reportefechas')->name('trabajadors.reportefechas');
+     Route::post('reportefecha','TrabajadorController@reporte_fecha')->name('reportes');
+
      //coordenadas
      Route::get('coordenadas', 'CoordenadasController@index')->name('coordenadas.index')->middleware('can:coordenadas.index');
     //CLEAR

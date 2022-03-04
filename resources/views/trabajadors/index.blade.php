@@ -63,10 +63,15 @@
                                                     <h5 class="modal-title" id="exampleModalLongTitle">DESCRIPCION DEL TRABAJADOR</h5>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p><strong>Nombre del Trabajador:</strong> {{$item->nombre}} {{$item->apellidos}}</p>
-                                                    <p><strong>Edad del Trabajador: </strong> {{$item->edad}}</p>
+                                                    @foreach ($users as $user )
+                                                    @if ($user->id == $item->idusuario)
+                                                    <p><strong>Nombre del Trabajador:</strong> {{$user->name}}</p>
+                                                    <p><strong>Direccion del Trabajador:</strong> {{$user->direccion}}</p>
+                                                    <p><strong>Telefono del Trabajador:</strong> {{$user->telefono}}</p>
+                                                    @endif
+                                                        
+                                                    @endforeach
                                                     <p><strong>Cargo del Trabajador: </strong> {{$item->cargo}}</p>
-                                                    <p><strong>Direccion del Trabajador: </strong> {{$item->direccion}}</p>
                                                     @foreach($proyectos as $proy)
                                                         @if($proy->id == $item->id)
                                                         <p><strong>Proyecto a Cargo: </strong> {{$proy->nombre}}</p>

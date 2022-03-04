@@ -5,7 +5,7 @@
       @foreach($trabajador as $trab)
         @foreach ($user as $usuario )
           @if ($trab->idusuario == $usuario->id)
-          <option value="{{$usuario['id']}}">{{$usuario['name']}} 
+          <option value="{{$trab['id']}}">{{$usuario['name']}} 
           </option>
           @endif
         @endforeach

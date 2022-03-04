@@ -11,7 +11,7 @@
                 <div class="card-body">
 
                     {!! Form::model($proyecto, ['route'=>['proyectos.update',$proyecto->id],'method'=>'PUT' ]) !!}
-                    @include('proyectos.partials.form')
+                    @include('proyectos.partials.form1')
                     {!! Form::close() !!}
                 </div>
             </div>

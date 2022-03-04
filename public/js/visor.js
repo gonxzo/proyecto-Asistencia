@@ -17,7 +17,7 @@ var icono_auto1 = L.icon({
 
 
 
-var map = L.map('map', { center: new L.LatLng(-16.499957537926285, -68.12999725341797), zoom: 13, zoomAnimation: true });
+var map = L.map('map', { center: new L.LatLng(-16.499957537926285, -68.12999725341797), zoom: 11, zoomAnimation: true });
 var derechos = "";
 //var ggl = new L.Google('HYBRID', { attribution: derechos });
 var googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {

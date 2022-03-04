@@ -103,11 +103,14 @@ tr:nth-child(even) {
 } */
 
 .navbar {
-    position: relative;
     background-color: rgba(0, 0, 0, 0.8);
     background: url(/img/fondo.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     width: 100%;
-    height: auto;
+    height: 80px;
     filter: brightness(0.5);
     z-index: 1;
 }

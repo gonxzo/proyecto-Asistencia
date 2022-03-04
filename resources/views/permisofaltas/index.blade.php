@@ -30,11 +30,17 @@
                                 <tbody>
                                     @foreach ($permisofaltas as $item)
                                         <tr>
-                                            @foreach ($users as $user)
-                                                @if ($item->idusuario == $user->id)
-                                                    <td>{{ $user->name }} </td>
+                                            @foreach ($trabajadors as $trab )
+                                                @if ($item->idusuario == $trab->id)
+                                                @foreach ($users as $user)
+                                                    @if ($trab->idusuario == $user->id)
+                                                        <td>{{ $user->name }} </td>
+                                                    @endif
+                                                @endforeach
                                                 @endif
+                                                
                                             @endforeach
+                                          
                                             <td>{{ $item->tipo }} </td>
                                             <td>{{ $item->observacion }} </td>
                                             <td width=10px>
