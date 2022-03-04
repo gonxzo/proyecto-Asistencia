@@ -66,7 +66,7 @@
     <table width="100%">
         <tr>
             <td colspan="6" style="text-align:center;width:100%;;">
-                @include('trabajadors.imagen')
+                <img src="img/logoE.png" alt="" width="170  " height="150">
             </td>
             <br>
             <td style="text-align:center;width:100%; size=1" colspan="6">
