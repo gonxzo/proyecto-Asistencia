@@ -61,15 +61,15 @@
                                                                 <div class="modal-body">
                                                                     @foreach ($trabajadors as $personal)
                                                                         @if ($personal->id == $item->idusuario)
-                                                                            <p><strong>Nombre del
-                                                                                    Trabajador:</strong>{{ $personal->nombre }}
-                                                                                {{ $personal->apellidos }}</p>
-                                                                            <p><strong>Edad del
-                                                                                    Trabajador:</strong>{{ $personal->edad }}
-                                                                            </p>
+                                                                            @foreach ($users as $user )
+                                                                                @if ($user->id == $personal->idusuario )
+                                                                                <p><strong>Nombre del Trabajador:</strong>{{ $user->name }}
+                                                                                <p><strong>Direccion del Trabajador:</strong>{{ $user->direccion }} 
+                                                                                <p><strong>telefono/Celular:</strong>{{ $user->telefono }}     
+                                                                                @endif
+                                                                                
+                                                                            @endforeach
                                                                             <p><strong>Cargo:</strong>{{ $personal->cargo }}
-                                                                            </p>
-                                                                            <p><strong>Direccion:</strong>{{ $personal->direccion }}
                                                                             </p>
                                                                         @endif
                                                                     @endforeach

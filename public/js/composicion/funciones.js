@@ -99,8 +99,12 @@ function cambiarNull(x) {
 $(document).ready(function() {
     $('#usuario').DataTable({
         responsive: true,
-        /* iDisplayStart: ,
-        iDisplayLength: 5, */
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+        },
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
 
     });
 
