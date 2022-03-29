@@ -56,7 +56,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>TABLA DE PRODUCTOS</title>
+    <title>PLANILLA CONTROL DE ASISTENCIA</title>
 </head>
 
 
@@ -73,7 +73,7 @@
                 <br>
                 <P>
                 <h4>CONSULTORA & CONSTRUCTORA PEÑA-ANDRADE </h4>
-                <h5>PLANILLA DE SUELDOS</h5>
+                <h5>PLANILLA GENERAL DE LOS TRABAJADORES</h5>
                 </P>
 
             </td>
@@ -96,10 +96,6 @@
             <td style="text-align:left;width:100%;" colspan="4">
                 <h5>Faltas</h5>
             </td>
-            <td style="text-align:left;width:100%;" colspan="4">
-                <h5>Sueldo</h5>
-            </td>
-
         </tr>
 
         @foreach ($trabajadors as $trabs)
@@ -139,10 +135,7 @@
                     <hr style="width: 100%;height: -20px;">
                     <font size=2>{{ $falta }}</font>
                 </td>
-                <td style="text-align:center;width:100%; " colspan="4">
-                    <hr style="width: 100%;height: -20px;">
-                    <font size=2>{{ $sueldo = ($asistencia + $permiso) * 140 }}</font>
-                </td>
+
             </tr>
         @endforeach
         <tr>

@@ -21,6 +21,7 @@
                                     <tr>
                                         <th scope="col">Personal</th>
                                         <th scope="col">Ausencia</th>
+                                        <th scope="col">Fecha</th>
                                         <th scope="col">Observacion</th>
                                         <th scope="col">Mostrar</th>
                                         <th scope="col">Editar</th>
@@ -42,6 +43,7 @@
                                             @endforeach
                                           
                                             <td>{{ $item->tipo }} </td>
+                                            <td>{{ $item->created_at }} </td>
                                             <td>{{ $item->observacion }} </td>
                                             <td width=10px>
                                                 @can('permisofaltas.show')

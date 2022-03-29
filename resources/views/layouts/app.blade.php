@@ -72,7 +72,7 @@
                             @endcan
                             @can('permisofaltas.index')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('permisofaltas.index')}} ">PERMISOS Y FALTAS</a>
+                                <a class="nav-link" href="{{route('permisofaltas.index')}} ">AUSENCIAS</a>
                             </li>
                             @endcan
                             @can('trabajadors.entradas')
